@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
 
-export default function pages() {
+export default function About() {
   const downloadCV = () => {
     // This would be the URL to your CV file
     const link = document.createElement("a");

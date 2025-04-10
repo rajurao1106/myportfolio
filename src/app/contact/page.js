@@ -5,7 +5,7 @@ import call from "../images/phone-call.png";
 import open_mail from "../images/Asidebar/open-mail.png";
 import Image from "next/image";
 
-export default function pages() {
+export default function Contact() {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {

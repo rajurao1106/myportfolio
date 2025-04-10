@@ -13,7 +13,7 @@ import english_teacher from "../images/english-teacher.png";
 import Asidebar from "../Asidebar";
 import Image from "next/image";
 
-export default function pages() {
+export default function Portfolio() {
   const websites = [
     {
       image: pracharkarsolutions,

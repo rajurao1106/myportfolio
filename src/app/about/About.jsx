@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 
-export default function page() {
+export default function About() {
   const downloadCV = () => {
     // This would be the URL to your CV file
     const link = document.createElement("a");

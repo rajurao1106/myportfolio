@@ -13,28 +13,31 @@ export default function Hero() {
   useEffect(() => {
     // Animating the Profile Image
     gsap.fromTo(
-      ".profile-img", 
-      { opacity: 0, y: 50 }, 
+      ".profile-img",
+      { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
     );
 
     // Animating the Text Content
     gsap.fromTo(
-      ".text-content", 
-      { opacity: 0, x: -100 }, 
+      ".text-content",
+      { opacity: 0, x: -100 },
       { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: 0.3 }
     );
 
     // Animating the Button on hover
     gsap.fromTo(
-      ".more-about-btn", 
-      { opacity: 0, y: 50 }, 
+      ".more-about-btn",
+      { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.5 }
     );
   }, []);
 
   return (
-    <section id="hero" className="w-full flex flex-col justify-center items-center bg-gray-950">
+    <section
+      id="hero"
+      className="w-full flex flex-col justify-center items-center bg-gray-950"
+    >
       <div className="w-[90%] flex flex-col max-lg:flex-col max-lg:items-center lg:flex-row justify-around">
         {/* Profile Image */}
         <Image
@@ -50,11 +53,14 @@ export default function Hero() {
             <p className="text-yellow-500">I'M D. RAJU RAO,</p> WEB DEVELOPER
           </h1>
           <p className="max-lg:text-base max-md:text-sm pr-5">
-            I am a passionate and results-driven Web Developer with 4 years of
+            I am a passionate and results-driven Web Developer with 1 years of
             experience specializing in creating dynamic, responsive, and
             user-friendly websites. My expertise lies in crafting seamless
             digital experiences using modern tools and technologies such as
-            React.js, Vite, Node.js, Express, and MongoDB.
+            React.js, Vite, Node.js, Express, MongoDB, and I also specialize in
+            JavaScript, Next.js, Tailwind CSS, Redux, and AI
+            integration like Google's Gemini API and ElevenLabs for voice
+            output.
           </p>
           <Link
             href={"/about"}
@@ -68,9 +74,9 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <About/>
-      <Portfolio/>
-      <Contact/>
+      <About />
+      <Portfolio />
+      <Contact />
     </section>
   );
 }

@@ -5,6 +5,9 @@ import right_arrow from "../images/right-arrow.png";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
+import About from "../about/About";
+import Portfolio from "../portfolio/Portfolio";
+import Contact from "../contact/Contact";
 
 export default function Hero() {
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function Hero() {
         <Image
           loading="lazy"
           src={profileImage}
-          className="profile-img w-[25rem] max-lg:w-[15rem] max-md:w-[12rem] rounded-3xl mb-8 max-lg:mb-8 lg:mb-0"
+          className="profile-img w-[25rem] max-lg:w-[15rem] max-md:w-[12rem] rounded-3xl mt-10 mb-8 max-lg:mb-8 lg:mb-0"
           alt="Profile"
         />
 
@@ -65,6 +68,9 @@ export default function Hero() {
           </Link>
         </div>
       </div>
+      <About/>
+      <Portfolio/>
+      <Contact/>
     </section>
   );
 }

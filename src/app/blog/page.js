@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 
-export default function Blog() {
+export default function Pages() {
   return (
     <section className="w-full flex flex-col justify-center items-center h-screen bg-gray-950 text-white text-center px-6">
       <h1 className="text-5xl font-bold mb-4 max-md:text-4xl max-sm:text-3xl">Blog</h1>

@@ -1,5 +1,5 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import educity from "../images/educity.png";
 import visit from "../images/external-link.png";
 import food_delivery from "../images/food_delivery.png";
@@ -10,7 +10,7 @@ import quickscan from "../images/quickscan.png";
 import buddy from "../images/buddy.png";
 import pracharkarsolutions from "../images/pracharkarsolutions.png";
 import english_teacher from "../images/english-teacher.png";
-import Asidebar from "../Asidebar";
+import { gsap } from "gsap";
 import Image from "next/image";
 
 export default function Portfolio() {
@@ -65,11 +65,30 @@ export default function Portfolio() {
     },
   ];
 
+  useEffect(() => {
+    // GSAP Fade-in effect for Section Header
+    gsap.from(".section-header", {
+      opacity: 0,
+      y: -50,
+      duration: 1.5,
+      ease: "power2.out",
+    });
+
+    // GSAP Animations for Project Cards
+    gsap.from(".project-card", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      duration: 1.2,
+      ease: "power2.out",
+    });
+  }, []);
+
   return (
     <section className="w-full flex flex-col gap-16 justify-center items-center bg-gray-950 py-10 text-white">
       <div className="w-[90%] flex flex-col justify-center items-center">
         {/* Section Header */}
-        <h1 className="w-full text-5xl font-extrabold mb-20 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
+        <h1 className="section-header w-full text-5xl font-extrabold mb-20 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
           WORK<p className="ml-2 text-yellow-400">WEBSITES</p>
           <p className="absolute text-8xl max-md:text-6xl opacity-10">
             PORTFOLIO
@@ -81,7 +100,7 @@ export default function Portfolio() {
           {websites.map((project, index) => (
             <div
               key={index}
-              className="w-80 h-44 overflow-hidden flex justify-center items-center relative group rounded-xl"
+              className="project-card w-80 h-44 overflow-hidden flex justify-center items-center relative group rounded-xl"
             >
               <Image
                 loading="lazy"
@@ -111,9 +130,10 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
+
       <div className="w-[90%] flex flex-col justify-center items-center">
         {/* Section Header */}
-        <h1 className="w-full text-5xl font-extrabold mb-20 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
+        <h1 className="section-header w-full text-5xl font-extrabold mb-20 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
           MY<p className="ml-2 text-yellow-400">PROJECTS</p>
           <p className="absolute text-8xl max-md:text-6xl opacity-10">
             PORTFOLIO
@@ -125,7 +145,7 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="w-80 h-44 overflow-hidden flex justify-center items-center relative group rounded-xl"
+              className="project-card w-80 h-44 overflow-hidden flex justify-center items-center relative group rounded-xl"
             >
               <Image
                 loading="lazy"
@@ -155,7 +175,6 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
-   
     </section>
   );
 }

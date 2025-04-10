@@ -1,9 +1,10 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
 import call from "../images/phone-call.png";
 import open_mail from "../images/Asidebar/open-mail.png";
 import Image from "next/image";
+import gsap from "gsap";
 
 export default function Contact() {
   const [result, setResult] = useState("");
@@ -27,19 +28,49 @@ export default function Contact() {
     }
   };
 
+  useEffect(() => {
+    // Animating the contact section on page load
+    gsap.fromTo(
+      ".contact-header",
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+    );
+
+    // Animating the left section (contact info)
+    gsap.fromTo(
+      ".contact-info",
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: 0.5 }
+    );
+
+    // Animating the right section (form)
+    gsap.fromTo(
+      ".contact-form",
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: 0.5 }
+    );
+
+    // Social icons animation
+    gsap.fromTo(
+      ".social-icons a",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power3.out", delay: 1 }
+    );
+  }, []);
+
   return (
     <section
       id="contact"
       className="w-full py-20 flex flex-col justify-center items-center h-screen max-lg:h-[100%] bg-gray-950 text-white"
     >
-      <h1 className="w-full text-5xl font-extrabold mb-10 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
+      <h1 className="contact-header w-full text-5xl font-extrabold mb-10 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
         GET IN<p className="ml-2 text-yellow-400">TOUCH</p>
         <p className="absolute text-8xl max-md:text-6xl opacity-10">CONTACT</p>
       </h1>
 
       <div className="w-[75%] flex flex-col lg:flex-row items-center justify-center gap-10">
-        {/* Left Section */}
-        <div className="flex flex-col gap-2">
+        {/* Left Section (Contact Info) */}
+        <div className="contact-info flex flex-col gap-2">
           <h2 className="text-2xl font-semibold">DON'T BE SHY!</h2>
           <p className="max-w-md text-left">
             Feel free to get in touch with me. I am always open to discussing
@@ -70,11 +101,8 @@ export default function Contact() {
               <p className="text-sm">+91 7470578448</p>
             </div>
           </div>
-          <div className="flex gap-5 text-3xl mt-4">
-            <a
-              href="https://www.linkedin.com/in/raju-rao/"
-              aria-label="LinkedIn"
-            >
+          <div className="social-icons flex gap-5 text-3xl mt-4">
+            <a href="https://www.linkedin.com/in/raju-rao/" aria-label="LinkedIn">
               <FaLinkedin className="hover:text-blue-600" />
             </a>
             <a href="https://github.com/rajurao1106" aria-label="GitHub">
@@ -95,8 +123,8 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="flex flex-col w-full lg:w-auto max-md:items-center">
+        {/* Right Section (Form) */}
+        <div className="contact-form flex flex-col w-full lg:w-auto max-md:items-center">
           <form onSubmit={onSubmit}>
             <div className="flex flex-col lg:flex-row gap-5">
               <input
@@ -138,14 +166,11 @@ export default function Contact() {
               Send Message
             </button>
             {result && (
-              <p className="mt-4 text-center text-sm text-green-500">
-                {result}
-              </p>
+              <p className="mt-4 text-center text-sm text-green-500">{result}</p>
             )}
           </form>
         </div>
       </div>
-      
     </section>
   );
 }

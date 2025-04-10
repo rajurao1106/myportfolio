@@ -1,13 +1,5 @@
 "use client"
 import React from "react";
-import {
-  FaReact,
-  FaCss3Alt,
-  FaNodeJs,
-  FaGitAlt,
-  FaServer,
-} from "react-icons/fa";
-import { SiRedux } from "react-icons/si";
 
 export default function page() {
   const downloadCV = () => {

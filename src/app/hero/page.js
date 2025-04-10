@@ -4,9 +4,7 @@ import profileImage from "../images/raju.jpg";
 import right_arrow from "../images/right-arrow.png";
 import Link from "next/link";
 import Image from "next/image";
-import About from "../about/page";
-import Portfolio from "../portfolio/page";
-import Contact from "../contact/page";
+
 
 export default function page() {
   return (
@@ -48,9 +46,7 @@ export default function page() {
         </div>
       </div>
       
-      <About/>
-      <Portfolio/>
-      <Contact/>
+      
      
     </section>
   );

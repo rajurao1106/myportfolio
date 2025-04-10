@@ -8,7 +8,7 @@ import About from "../about/page";
 import Portfolio from "../portfolio/page";
 import Contact from "../contact/page";
 
-export default function Pages() {
+export default function page() {
   return (
     <section
       id="hero"

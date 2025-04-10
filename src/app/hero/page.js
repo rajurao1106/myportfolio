@@ -1,13 +1,11 @@
+"use client"
 import React from 'react'
-import Hero from './components/Hero'
-import Asidebar from './Asidebar'
+import Hero from '../components/Hero'
 
 export default function page() {
   return (
     <div>
-      <Asidebar/>
       <Hero/>
-      
     </div>
   )
 }

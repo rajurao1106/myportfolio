@@ -1,5 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import educity from "../images/educity.png";
 import visit from "../images/external-link.png";
 import food_delivery from "../images/food_delivery.png";
@@ -9,11 +13,13 @@ import define from "../images/define.png";
 import quickscan from "../images/quickscan.png";
 import buddy from "../images/buddy.png";
 import pracharkarsolutions from "../images/pracharkarsolutions.png";
-import english_teacher from "../images/english-teacher.png";
-import { gsap } from "gsap";
-import Image from "next/image";
+import aiguru from "../images/aiguru.png";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Portfolio() {
+  const sectionRef = useRef(null);
+
   const websites = [
     {
       image: pracharkarsolutions,
@@ -23,7 +29,7 @@ export default function Portfolio() {
     {
       image: spadvertising,
       link: "https://spadvertising.in",
-      name: "Advertiisng Agency",
+      name: "Advertising Agency",
     },
     {
       image: varunwadhwa,
@@ -34,14 +40,14 @@ export default function Portfolio() {
 
   const projects = [
     {
-      image: english_teacher,
-      link: "https://ai-projects-two.vercel.app/MakeAFriends",
-      name: "English Teacher",
+      image: aiguru,
+      link: "https://aiguru.vercel.app/",
+      name: "Ai Guru",
     },
     {
       image: define,
       link: "https://define-jss6.onrender.com",
-      name: "Educity Website",
+      name: "Define Website",
     },
     {
       image: buddy,
@@ -66,36 +72,48 @@ export default function Portfolio() {
   ];
 
   useEffect(() => {
-    // GSAP Fade-in effect for Section Header
-    gsap.from(".section-header", {
-      opacity: 0,
-      y: -50,
-      duration: 1.5,
-      ease: "power2.out",
-    });
+    let ctx = gsap.context(() => {
+      gsap.from(".section-header", {
+        scrollTrigger: {
+          trigger: ".section-header",
+          start: "top 80%",
+        },
+        y: -50,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+      });
 
-    // GSAP Animations for Project Cards
-    gsap.from(".project-card", {
-      opacity: 0,
-      y: 50,
-      stagger: 0.2,
-      duration: 1.2,
-      ease: "power2.out",
-    });
+      gsap.from(".project-card", {
+        scrollTrigger: {
+          trigger: ".project-card",
+          start: "top 90%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        stagger: 0.2,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section className="w-full flex flex-col gap-16 justify-center items-center bg-gray-950 py-10 text-white">
+    <section
+      ref={sectionRef}
+      className="w-full flex flex-col gap-16 justify-center items-center bg-gray-950 py-10 text-white"
+    >
+      {/* Websites Section */}
       <div className="w-[90%] flex flex-col justify-center items-center">
-        {/* Section Header */}
         <h1 className="section-header w-full text-5xl font-extrabold mb-20 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
-          WORK<p className="ml-2 text-yellow-400">WEBSITES</p>
+          WORK <p className="ml-2 text-yellow-400">WEBSITES</p>
           <p className="absolute text-8xl max-md:text-6xl opacity-10">
             PORTFOLIO
           </p>
         </h1>
 
-        {/* Project Cards */}
         <div className="w-full flex gap-10 flex-wrap justify-center items-center">
           {websites.map((project, index) => (
             <div
@@ -105,7 +123,7 @@ export default function Portfolio() {
               <Image
                 loading="lazy"
                 src={project.image}
-                alt={`${project.name} preview`}
+                alt={project.name}
                 className="w-80 transform transition-transform duration-300 ease-in-out group-hover:scale-125"
               />
               <a
@@ -116,13 +134,8 @@ export default function Portfolio() {
               >
                 <p className="hidden group-hover:block">
                   <span className="flex justify-center items-center gap-1">
-                    Visit Website{" "}
-                    <Image
-                      loading="lazy"
-                      src={visit}
-                      className="w-8 h-8"
-                      alt="Visit icon"
-                    />
+                    Visit Website
+                    <Image src={visit} className="w-8 h-8" alt="Visit" />
                   </span>
                 </p>
               </a>
@@ -131,16 +144,15 @@ export default function Portfolio() {
         </div>
       </div>
 
+      {/* Projects Section */}
       <div className="w-[90%] flex flex-col justify-center items-center">
-        {/* Section Header */}
         <h1 className="section-header w-full text-5xl font-extrabold mb-20 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
-          MY<p className="ml-2 text-yellow-400">PROJECTS</p>
+          MY <p className="ml-2 text-yellow-400">PROJECTS</p>
           <p className="absolute text-8xl max-md:text-6xl opacity-10">
             PORTFOLIO
           </p>
         </h1>
 
-        {/* Project Cards */}
         <div className="w-full flex gap-10 flex-wrap justify-center items-center">
           {projects.map((project, index) => (
             <div
@@ -150,7 +162,7 @@ export default function Portfolio() {
               <Image
                 loading="lazy"
                 src={project.image}
-                alt={`${project.name} preview`}
+                alt={project.name}
                 className="w-80 transform transition-transform duration-300 ease-in-out group-hover:scale-125"
               />
               <a
@@ -161,13 +173,8 @@ export default function Portfolio() {
               >
                 <p className="hidden group-hover:block">
                   <span className="flex justify-center items-center gap-1">
-                    Visit Website{" "}
-                    <img
-                      loading="lazy"
-                      src={visit}
-                      className="w-8 h-8"
-                      alt="Visit icon"
-                    />
+                    Visit Website
+                    <Image src={visit} className="w-8 h-8" alt="Visit" />
                   </span>
                 </p>
               </a>

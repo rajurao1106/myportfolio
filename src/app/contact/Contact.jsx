@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
 import call from "../images/phone-call.png";
 import open_mail from "../images/Asidebar/open-mail.png";
@@ -8,13 +8,13 @@ import gsap from "gsap";
 
 export default function Contact() {
   const [result, setResult] = useState("");
+  const sectionRef = useRef(null);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
     const formData = new FormData(event.target);
-
-    formData.append("access_key", "5f1e465a-6898-4169-b57c-92103a1e3ade"); // Replace with your Web3Forms access key
+    formData.append("access_key", "5f1e465a-6898-4169-b57c-92103a1e3ade");
 
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -29,37 +29,45 @@ export default function Contact() {
   };
 
   useEffect(() => {
-    // Animating the contact section on page load
-    gsap.fromTo(
-      ".contact-header",
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          gsap.fromTo(
+            ".contact-header",
+            { opacity: 0, y: -50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+          );
+
+          gsap.fromTo(
+            ".contact-info",
+            { opacity: 0, x: -100 },
+            { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: 0.5 }
+          );
+
+          gsap.fromTo(
+            ".contact-form",
+            { opacity: 0, x: 100 },
+            { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: 0.5 }
+          );
+
+          gsap.fromTo(
+            ".social-icons a",
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power3.out", delay: 1 }
+          );
+
+          observer.disconnect(); // Animate only once
+        }
+      },
+      { threshold: 0.3 }
     );
 
-    // Animating the left section (contact info)
-    gsap.fromTo(
-      ".contact-info",
-      { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: 0.5 }
-    );
-
-    // Animating the right section (form)
-    gsap.fromTo(
-      ".contact-form",
-      { opacity: 0, x: 100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power3.out", delay: 0.5 }
-    );
-
-    // Social icons animation
-    gsap.fromTo(
-      ".social-icons a",
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power3.out", delay: 1 }
-    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
   }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="contact"
       className="w-full py-20 flex flex-col justify-center items-center h-screen max-lg:h-[100%] bg-gray-950 text-white"
     >

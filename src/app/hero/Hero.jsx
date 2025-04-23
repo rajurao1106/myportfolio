@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="w-full flex flex-col justify-center items-center bg-gray-950"
+      className="w-full max-w-[1200px] flex flex-col justify-center items-center bg-gray-950"
     >
       <div className="w-[90%] flex flex-col max-lg:flex-col max-lg:items-center lg:flex-row justify-around">
         {/* Profile Image */}

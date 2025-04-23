@@ -19,7 +19,7 @@ export default function Asidebar() {
   };
 
   return (
-    <div className="h-[100%] fixed right-0 z-10 ">
+    <div className="h-[100%] fixed right-0 z-10 max-lg:hidden">
       {/* Menu Button for Mobile */}
       <button
         className="fixed top-4 right-4 z-20 bg-gray-700 text-white p-2 rounded-md md:hidden"
@@ -41,7 +41,7 @@ export default function Asidebar() {
           <Link
             onClick={toggleMenu}
             href={"/"}
-            className="mb-4 bg-gray-700 hover:bg-yellow-500 p-2 rounded-full w-[50px] h-[50px] 
+            className="mb-4 bg-gray-700 hover:bg-gray-700 p-2 rounded-full w-[50px] h-[50px] 
         hover:w-[100%] max-md:w-[100%] transition-all duration-300 right-0 flex justify-center pr-10 items-center group relative"
           >
             <p className="hidden group-hover:block max-md:block fixed">Home</p>
@@ -52,7 +52,7 @@ export default function Asidebar() {
           <Link
             onClick={toggleMenu}
             href={"/about"}
-            className="mb-4 bg-gray-700 hover:bg-yellow-500 p-2 rounded-full w-[50px] h-[50px] 
+            className="mb-4 bg-gray-700 hover:bg-gray-700 p-2 rounded-full w-[50px] h-[50px] 
         hover:w-[100%] max-md:w-[100%] transition-all duration-300 right-0 flex justify-center pr-10 items-center group relative"
           >
             <p className="hidden group-hover:block max-md:block fixed">About</p>
@@ -63,7 +63,7 @@ export default function Asidebar() {
           <Link
             onClick={toggleMenu}
             href={"/portfolio"}
-            className="mb-4 bg-gray-700 hover:bg-yellow-500 p-2 rounded-full w-[50px] h-[50px] 
+            className="mb-4 bg-gray-700 hover:bg-gray-700 p-2 rounded-full w-[50px] h-[50px] 
         hover:w-[100%] max-md:w-[100%] transition-all duration-300 right-0 flex justify-center pr-10 items-center group relative"
           >
             <p className="hidden group-hover:block max-md:block fixed">
@@ -76,7 +76,7 @@ export default function Asidebar() {
           <Link
             onClick={toggleMenu}
             href={"/contact"}
-            className="mb-4 bg-gray-700 hover:bg-yellow-500 p-2 rounded-full w-[50px] h-[50px] 
+            className="mb-4 bg-gray-700 hover:bg-gray-700 p-2 rounded-full w-[50px] h-[50px] 
         hover:w-[100%] max-md:w-[100%] transition-all duration-300 right-0 flex justify-center pr-10 items-center group relative"
           >
             <p className="hidden group-hover:block max-md:block fixed">
@@ -89,7 +89,7 @@ export default function Asidebar() {
           <Link
             onClick={toggleMenu}
             href={"/blog"}
-            className="mb-4 bg-gray-700 hover:bg-yellow-500 p-2 rounded-full w-[50px] h-[50px] 
+            className="mb-4 bg-gray-700 hover:bg-gray-700 p-2 rounded-full w-[50px] h-[50px] 
         hover:w-[100%] max-md:w-[100%] transition-all duration-300 right-0 flex justify-center pr-10 items-center group relative"
           >
             <p className="hidden group-hover:block max-md:block fixed">Blog</p>

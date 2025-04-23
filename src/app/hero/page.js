@@ -3,7 +3,7 @@ import Hero from './Hero'
 
 export default function page() {
   return (
-    <div>
+    <div className='flex justify-center items-center'>
       <Hero/>
     </div>
   )

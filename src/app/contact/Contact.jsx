@@ -69,7 +69,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="w-full py-20 flex flex-col justify-center items-center h-screen max-lg:h-[100%] bg-gray-950 text-white"
+      className="w-full max-w-[1200px] py-20 flex flex-col justify-center items-center h-screen max-lg:h-[100%] bg-gray-950 text-white"
     >
       <h1 className="contact-header w-full text-5xl font-extrabold mb-10 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
         GET IN<p className="ml-2 text-yellow-400">TOUCH</p>

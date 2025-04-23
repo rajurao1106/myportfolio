@@ -103,7 +103,7 @@ export default function Portfolio() {
   return (
     <section
       ref={sectionRef}
-      className="w-full flex flex-col gap-16 justify-center items-center bg-gray-950 py-10 text-white"
+      className="w-full max-w-[1200px] flex flex-col gap-16 justify-center items-center bg-gray-950 py-10 text-white"
     >
       {/* Websites Section */}
       <div className="w-[90%] flex flex-col justify-center items-center">

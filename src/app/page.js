@@ -3,7 +3,7 @@ import Hero from './hero/page'
 
 export default function page() {
   return (
-    <div>
+    <div className='bg-gray-950'>
       <Hero/>
     </div>
   )

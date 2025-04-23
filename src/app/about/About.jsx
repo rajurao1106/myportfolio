@@ -7,7 +7,7 @@ export default function About() {
 
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "https://drive.google.com/file/d/1rW29mRBY6ddYMQDaoH7g7fp-VTAMNkcN/view?usp=drivesdk";
+    link.href = "https://drive.google.com/file/d/1p1J1_wZyrDbMH7bv79lTpfQIa1_QAJqq/view?usp=drivesdk";
     link.download = "D_Raju_Rao_CV.pdf";
     link.click();
   };
@@ -78,7 +78,7 @@ export default function About() {
               <p>Last Name : Rao</p>
               <p>Age : 21</p>
               <p>Nationality : Indian</p>
-              <p>Freelance : None</p>
+              <p>Freelance : Yes</p>
             </div>
             <div className="justify-end gap-4 flex flex-col">
               <p>Address : Raipur, Chhattisgarh</p>
@@ -112,7 +112,7 @@ export default function About() {
             <p>years of experience</p>
           </div>
           <div className="stat-card p-5 w-[15rem] h-[8rem] border rounded-lg border-red-100 flex flex-col items-center">
-            <p className="text-5xl font-bold text-yellow-400">18+</p>
+            <p className="text-5xl font-bold text-yellow-400">20+</p>
             <p>projects completed</p>
           </div>
           <div className="stat-card p-5 w-[15rem] h-[8rem] border rounded-lg border-red-100 flex flex-col items-center">
@@ -120,7 +120,7 @@ export default function About() {
             <p>years in industry</p>
           </div>
           <div className="stat-card p-5 w-[15rem] h-[8rem] border rounded-lg border-red-100 flex flex-col items-center">
-            <p className="text-5xl font-bold text-yellow-400">4+</p>
+            <p className="text-5xl font-bold text-yellow-400">8+</p>
             <p>happy clients</p>
           </div>
         </div>

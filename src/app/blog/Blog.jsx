@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Blog() {
   return (
-    <section className="w-full max-w-[1200px] flex flex-col justify-center items-center h-screen bg-gray-950 text-white text-center px-6">
+    <section className="w-full flex flex-col justify-center items-center h-screen bg-gray-950 text-white text-center px-6">
       <h1 className="text-5xl font-bold mb-4 max-md:text-4xl max-sm:text-3xl">Blog</h1>
       <p className="text-2xl max-md:text-xl max-sm:text-lg">Coming Soon!</p>
       <p className="text-lg mt-4 max-md:text-base max-sm:text-sm">

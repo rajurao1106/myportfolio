@@ -14,6 +14,8 @@ import quickscan from "../images/quickscan.png";
 import buddy from "../images/buddy.png";
 import pracharkarsolutions from "../images/pracharkarsolutions.png";
 import aiguru from "../images/aiguru.png";
+import drchitraendocare from "../images/drchitraendocare.png";
+import drkunalsayani from "../images/drkunalsayani.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,9 +38,34 @@ export default function Portfolio() {
       link: "https://varunwadhwa.com",
       name: "Book Author",
     },
+    {
+      image: drchitraendocare,
+      link: "https://drchitraendocare.com",
+      name: "Advertising Agency",
+    },
+    {
+      image: drkunalsayani,
+      link: "https://drkunalsayani.com",
+      name: "Book Author",
+    },
   ];
 
   const projects = [
+     {
+      image: food_delivery,
+      link: "https://rajurao1106.github.io/food-website/",
+      name: "Food Delivery Website",
+    },
+    {
+      image: quickscan,
+      link: "https://quickscan.onrender.com",
+      name: "Quickscan Website",
+    },
+    {
+      image: educity,
+      link: "https://rajurao1106.github.io/educity-website/",
+      name: "Educity Website",
+    },
     {
       image: aiguru,
       link: "https://aiguru.vercel.app/",
@@ -54,21 +81,7 @@ export default function Portfolio() {
       link: "https://buddy-5ext.onrender.com/",
       name: "Buddy Website",
     },
-    {
-      image: food_delivery,
-      link: "https://rajurao1106.github.io/food-website/",
-      name: "Food Delivery Website",
-    },
-    {
-      image: quickscan,
-      link: "https://quickscan.onrender.com",
-      name: "Quickscan Website",
-    },
-    {
-      image: educity,
-      link: "https://rajurao1106.github.io/educity-website/",
-      name: "Educity Website",
-    },
+   
   ];
 
   useEffect(() => {
@@ -103,7 +116,7 @@ export default function Portfolio() {
   return (
     <section
       ref={sectionRef}
-      className="w-full max-w-[1200px] flex flex-col gap-16 justify-center items-center bg-gray-950 py-10 text-white"
+      className="w-full flex flex-col gap-16 justify-center items-center bg-gray-950 py-10 text-white"
     >
       {/* Websites Section */}
       <div className="w-[90%] flex flex-col justify-center items-center">

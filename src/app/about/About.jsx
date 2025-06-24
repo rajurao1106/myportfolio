@@ -61,7 +61,7 @@ export default function About() {
     <section
       ref={aboutRef}
       id="about"
-      className="w-full max-w-[1200px] flex flex-col justify-center items-center py-10 bg-gray-950 text-white h-screen max-md:h-[100%]"
+      className="w-full flex flex-col justify-center items-center py-10 bg-gray-950 text-white h-screen max-md:h-[100%]"
     >
       <h1 className="section-header w-full text-5xl font-extrabold mb-20 max-lg:text-4xl max-md:text-3xl relative flex justify-center items-center">
         ABOUT <p className="ml-2 text-yellow-400"> ME</p>

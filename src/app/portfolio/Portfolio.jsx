@@ -16,6 +16,9 @@ import pracharkarsolutions from "../images/pracharkarsolutions.png";
 import aiguru from "../images/aiguru.png";
 import drchitraendocare from "../images/drchitraendocare.png";
 import drkunalsayani from "../images/drkunalsayani.png";
+import muraadconstruction from "../images/muraadconstruction.png";
+import svnsolar from "../images/svnsolar.png";
+import diginote from "../images/diginote.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,37 +27,59 @@ export default function Portfolio() {
 
   const websites = [
     {
+      image: drkunalsayani,
+      link: "https://drkunalsayani.com",
+      name: "Dr. Kunal Sayani",
+    },
+
+    {
+      image: spadvertising,
+      link: "https://spadvertising.in",
+      name: "SP Advertising",
+    },
+   
+    {
+      image: drchitraendocare,
+      link: "https://drchitraendocare.com",
+      name: "Dr. Chitra Endocare",
+    },
+     {
+      image: varunwadhwa,
+      link: "https://varunwadhwa.com",
+      name: "Varun Wadhwa",
+    },
+    {
       image: pracharkarsolutions,
       link: "https://www.pracharkarsolutions.com",
       name: "Pracharkar Solutions",
     },
     {
-      image: spadvertising,
-      link: "https://spadvertising.in",
-      name: "Advertising Agency",
+      image: muraadconstruction,
+      link: "https://muraadconstruction.com",
+      name: "Muraad Construction",
     },
     {
-      image: varunwadhwa,
-      link: "https://varunwadhwa.com",
-      name: "Book Author",
-    },
-    {
-      image: drchitraendocare,
-      link: "https://drchitraendocare.com",
-      name: "Advertising Agency",
-    },
-    {
-      image: drkunalsayani,
-      link: "https://drkunalsayani.com",
-      name: "Book Author",
+      image: svnsolar,
+      link: "https://svnsolar.vercel.app/",
+      name: "SVN Solar",
     },
   ];
 
   const projects = [
-     {
+    {
+      image: diginote,
+      link: "https://diginote.in/",
+      name: "SVN Solar",
+    },
+    {
       image: food_delivery,
       link: "https://rajurao1106.github.io/food-website/",
       name: "Food Delivery Website",
+    },
+    {
+      image: aiguru,
+      link: "https://aiguru.vercel.app/",
+      name: "Ai Guru",
     },
     {
       image: quickscan,
@@ -66,11 +91,7 @@ export default function Portfolio() {
       link: "https://rajurao1106.github.io/educity-website/",
       name: "Educity Website",
     },
-    {
-      image: aiguru,
-      link: "https://aiguru.vercel.app/",
-      name: "Ai Guru",
-    },
+    
     {
       image: define,
       link: "https://define-jss6.onrender.com",
@@ -81,7 +102,6 @@ export default function Portfolio() {
       link: "https://buddy-5ext.onrender.com/",
       name: "Buddy Website",
     },
-   
   ];
 
   useEffect(() => {

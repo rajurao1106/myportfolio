@@ -108,19 +108,19 @@ export default function About() {
         {/* Experience Stats */}
         <div className="w-[100%] max-md:w-full flex flex-wrap gap-5 max-lg:justify-center">
           <div className="stat-card p-5 w-[15rem] h-[8rem] border rounded-lg border-red-100 flex flex-col items-center">
-            <p className="text-5xl font-bold text-yellow-400">4+</p>
+            <p className="text-5xl font-bold text-yellow-400">5+</p>
             <p>years of experience</p>
           </div>
           <div className="stat-card p-5 w-[15rem] h-[8rem] border rounded-lg border-red-100 flex flex-col items-center">
-            <p className="text-5xl font-bold text-yellow-400">20+</p>
+            <p className="text-5xl font-bold text-yellow-400">12+</p>
             <p>projects completed</p>
           </div>
           <div className="stat-card p-5 w-[15rem] h-[8rem] border rounded-lg border-red-100 flex flex-col items-center">
-            <p className="text-5xl font-bold text-yellow-400">3+</p>
+            <p className="text-5xl font-bold text-yellow-400">1+</p>
             <p>years in industry</p>
           </div>
           <div className="stat-card p-5 w-[15rem] h-[8rem] border rounded-lg border-red-100 flex flex-col items-center">
-            <p className="text-5xl font-bold text-yellow-400">8+</p>
+            <p className="text-5xl font-bold text-yellow-400">7+</p>
             <p>happy clients</p>
           </div>
         </div>

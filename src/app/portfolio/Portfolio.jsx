@@ -19,6 +19,7 @@ import drkunalsayani from "../images/drkunalsayani.png";
 import muraadconstruction from "../images/muraadconstruction.png";
 import svnsolar from "../images/svnsolar.png";
 import diginote from "../images/diginote.png";
+import iref from "../images/iref.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,6 +63,11 @@ export default function Portfolio() {
       image: svnsolar,
       link: "https://svnsolar.vercel.app/",
       name: "SVN Solar",
+    },
+     {
+      image: iref,
+      link: "https://irefraipur.in/",
+      name: "irefraipur",
     },
   ];
 

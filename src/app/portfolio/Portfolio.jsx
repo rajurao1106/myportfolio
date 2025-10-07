@@ -59,11 +59,11 @@ export default function Portfolio() {
       link: "https://muraadconstruction.com",
       name: "Muraad Construction",
     },
-    {
-      image: svnsolar,
-      link: "https://svnsolar.vercel.app/",
-      name: "SVN Solar",
-    },
+    // {
+    //   image: svnsolar,
+    //   link: "https://svnsolar.vercel.app/",
+    //   name: "SVN Solar",
+    // },
      {
       image: iref,
       link: "https://irefraipur.in/",
@@ -87,11 +87,11 @@ export default function Portfolio() {
       link: "https://aiguru.vercel.app/",
       name: "Ai Guru",
     },
-    {
-      image: quickscan,
-      link: "https://quickscan.onrender.com",
-      name: "Quickscan Website",
-    },
+    // {
+    //   image: quickscan,
+    //   link: "https://quickscan.onrender.com",
+    //   name: "Quickscan Website",
+    // },
     {
       image: educity,
       link: "https://rajurao1106.github.io/educity-website/",

@@ -26,9 +26,9 @@ export default function Asidebar() {
         onClick={toggleMenu}
       >
         {isMenuOpen ? (
-          <Image loading="lazy" src={close} className="w-5" alt="" />
+          <Image loading="lazy" alt="" src={close} className="w-5" />
         ) : (
-          <Image loading="lazy" src={menu} className="w-5" />
+          <Image loading="lazy" alt="" src={menu} className="w-5" />
         )}
       </button>
 

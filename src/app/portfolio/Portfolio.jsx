@@ -87,11 +87,11 @@ export default function Portfolio() {
       link: "https://aiguru.vercel.app/",
       name: "Ai Guru",
     },
-    // {
-    //   image: quickscan,
-    //   link: "https://quickscan.onrender.com",
-    //   name: "Quickscan Website",
-    // },
+    {
+      image: quickscan,
+      link: "https://quickscan-nine.vercel.app/",
+      name: "Quickscan Website",
+    },
     {
       image: educity,
       link: "https://rajurao1106.github.io/educity-website/",
